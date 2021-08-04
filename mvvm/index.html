@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="name" placeholder="姓名">
+        <input type="text" v-model="age" placeholder="年龄">
+        <input type="text" v-model="name" placeholder="姓名">
+        <input type="text" v-model="phone" placeholder="手机">
+        <div>
+            <p>
+                <span>{{ name }}</span>
+            </p>
+            <p>
+                <span>{{ name }}</span>
+            </p>
+            <p>
+                <span>{{ age }}</span>
+            </p>
+            <p>
+                <span>{{ phone }}</span>
+            </p>
+        </div>
+        <button>改变年龄</button>
+    </div>
+    <script src="./mvvm.js"></script>
+    <script>
+        const app = new MVVM({
+            el: '#app',
+            data: function() {
+                return {
+                    name: 'a',
+                    age: '',
+                    email: '',
+                    phone: ''
+                }
+            }
+        })
+        document.querySelector('button').addEventListener('click', () => {
+            app.age = 20;
+        }, false)
+    </script>
+</body>
+</html>
