@@ -36,7 +36,7 @@ class MyVue {
         // 初始化视图，解析指令数据，收集数据与视图的关系，构建dataDomPool， 同时绑定事件；
         this.initDom(this.$el);
         // 初始化视图
-        this.updataView();
+        this.updateView();
     }
     initData() {
         for (const key in this._data) {
@@ -46,7 +46,7 @@ class MyVue {
                 },
                 set(newVal) {
                     this._data[key] = newVal;
-                    this.updataView(key);
+                    this.updateView(key);
                 }
             })
         }
@@ -88,7 +88,7 @@ class MyVue {
         el.addEventListener(event, fn.bind(this), false);
     }
     // 根据key, 更新数据相关的dom视图
-    updataView(dataKey) {
+    updateView(dataKey) {
         if(!dataKey) {
             // 初始化视图
             for (const key in this.dataDomPool) {
