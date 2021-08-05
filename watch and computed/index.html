@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>watch and computed</title>
+</head>
+<body>
+    <script src="./index.js"></script>
+    <script>
+        const app = new MyVue({
+            data(){
+                return {
+                    a: 1,
+                    b: 2
+                }
+            },
+            computed: {
+                total() {
+                    console.log('computed.......total')
+                    return this.a + this.b;
+                }
+            },
+            watch: {
+                total (newVal, oldVal) {
+                    console.log('watch...total', newVal, oldVal);
+                },
+                a (newVal, oldVal) {
+                    console.log('a...total', newVal, oldVal);
+                },
+                b (newVal, oldVal) {
+                    console.log('b...total', newVal, oldVal);
+                }
+            }
+        })
+        console.log(app.total)
+        app.a = 10;
+        console.log(app.total)
+        app.b = 20;
+        console.log(app.total)
+    </script>
+</body>
+</html>
