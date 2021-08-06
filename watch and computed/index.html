@@ -7,8 +7,9 @@
 </head>
 <body>
     <script src="./index.js"></script>
+    <script src="./vue.js"></script>
     <script>
-        const app = new MyVue({
+        const options = {
             data(){
                 return {
                     a: 1,
@@ -32,7 +33,9 @@
                     console.log('b...total', newVal, oldVal);
                 }
             }
-        })
+        }
+        // const app = new MyVue(options);
+        const app = new Vue(options)
         console.log(app.total)
         app.a = 10;
         console.log(app.total)

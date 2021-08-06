@@ -2,6 +2,8 @@
  * 简单实现computed和watch
  * 
  * 数据劫持，代理data到this
+ * get
+ * set  -> 触发 computed 和 watch
  * computed
  * 1. initComputed
  *   代理computed 的key到this
